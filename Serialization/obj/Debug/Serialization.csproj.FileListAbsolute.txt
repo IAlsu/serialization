@@ -1,0 +1,6 @@
+D:\МОЁ\Tasks\Task10_HTTP\Serialization\Serialization\bin\Debug\Serialization.exe.config
+D:\МОЁ\Tasks\Task10_HTTP\Serialization\Serialization\obj\Debug\Serialization.csprojResolveAssemblyReference.cache
+D:\МОЁ\Tasks\Task10_HTTP\Serialization\Serialization\bin\Debug\Serialization.exe
+D:\МОЁ\Tasks\Task10_HTTP\Serialization\Serialization\bin\Debug\Serialization.pdb
+D:\МОЁ\Tasks\Task10_HTTP\Serialization\Serialization\obj\Debug\Serialization.exe
+D:\МОЁ\Tasks\Task10_HTTP\Serialization\Serialization\obj\Debug\Serialization.pdb

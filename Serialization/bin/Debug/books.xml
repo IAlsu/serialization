@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <catalog>
+    <book>
+      <isbn>0 - 596 - 00103 - 7</isbn>
+      <author>Löwy, Juval</author>
+      <title>COM and .NET Component Services</title>
+      <genre>Computer</genre>
+      <publisher>O'Reilly</publisher>
+      <publish_date>2016-11-02</publish_date>
+      <description>...</description>
+      <registration_date>2016-11-02</registration_date>
+    </book>
+  </catalog>
+</catalog>
