@@ -7,39 +7,27 @@ using System.Xml.Serialization;
 
 namespace Serialization
 {
-    [XmlRoot("catalog")]
+    [XmlType("catalog")]
     public class Catalog
     {
-        [XmlRoot("book")]
-        public class Book
+        private DateTime date;
+
+        [XmlAttribute("date")]
+        public string Date
         {
-            [XmlElement("isbn")]
-            public string Isbn { get; set; }
-
-            [XmlElement("author")]
-            public string Author { get; set; }
-
-            [XmlElement("title")]
-            public string Title { get; set; }
-
-            [XmlElement("genre")]
-            public string Genre { get; set; }
-
-            [XmlElement("publisher")]
-            public string Publisher { get; set; }
-
-            [XmlElement("publish_date")]
-            public string PublishDate { get; set; }
-
-            [XmlElement("description")]
-            public string Description { get; set; }
-
-            [XmlElement("registration_date")]
-            public string RegistrationDate { get; set; }
+            get { return date.ToString("yyyy-MM-dd"); }
+            set { date = Convert.ToDateTime(value); }
         }
 
-        //[XmlArray("catalog")]
+        [XmlArray("books")]
         [XmlArrayItem("book")]
-        public Book[] catalog { get; set; }
+        public List<Book> Books { get; set; }
+
+        public Catalog()
+        {
+            Books = new List<Book>();
+        }
     }
+
+
 }

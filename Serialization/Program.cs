@@ -12,32 +12,27 @@ namespace Serialization
     {
         static void Main(string[] args)
         {
-
-            Catalog c = new Catalog();
-            c.catalog = new Catalog.Book[]
-            { new Catalog.Book 
-                                { 
-                                Isbn = "0 - 596 - 00103 - 7",
-                                Author = "Löwy, Juval",
-                                Title = "COM and .NET Component Services",
-                                Genre = "Computer",
-                                Publisher = "O'Reilly",
-                                PublishDate =DateTime.Now.ToString("yyyy-MM-dd"),
-                                Description = "...",
-                                RegistrationDate = DateTime.Now.ToString("yyyy-MM-dd")
-                                } }  ;
-
-            //("yyyy-MM-dd");
-            var serializer = new XmlSerializer(typeof(Catalog));
-            var stream = new FileStream("books.xml", FileMode.Create);
-            serializer.Serialize(stream, c); stream.Close();
-
-
-            serializer = new XmlSerializer(typeof(Catalog));
-            var person = serializer.Deserialize(
-                new FileStream("books.xml", FileMode.Open)) as Catalog;
-
+            SerializeAndDeserialize();
             Console.ReadLine();
+        }
+
+        static void SerializeAndDeserialize()
+        {
+            var serializer = new XmlSerializer(typeof(Catalog));
+            
+            // Десериализация существующего файла "books.xml" в папке ...\bin\Debug проекта
+            Console.WriteLine("Start deserialization");
+            var catalog = serializer.Deserialize(
+                new FileStream("books.xml", FileMode.Open)) as Catalog;
+            Console.WriteLine("Deserialization of the file ...\\bin\\Debug\\books.xml finished");
+
+            //Сериализация в файл "books_deserialized.xml" в папке ...\bin\Debug проекта
+            Console.WriteLine("Start Serialization");
+            var stream = new FileStream("books_deserialized.xml", FileMode.Create);
+            serializer.Serialize(stream, catalog);
+            Console.WriteLine("Serialization finished (...\\bin\\Debug\\books1.xml)");
+
+            stream.Close();
         }
     }
 }
